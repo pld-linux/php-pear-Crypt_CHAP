@@ -6,7 +6,7 @@
 Summary:	%{_pearname} - Generating CHAP packets
 Summary(pl):	%{_pearname} - Generowanie pakietów CHAP
 Name:		php-pear-%{_pearname}
-Version:	0.8.2
+Version:	0.8.5
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
