@@ -40,9 +40,9 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_pearname}
+install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 
-install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_pearname}
+install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -50,7 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc %{_pearname}-%{version}/tests/*
-%dir %{php_pear_dir}/%{_pearname}
-# propably this will be correct location in next release:
-#%{php_pear_dir}/%{_class}/*.php
-%{php_pear_dir}/%{_pearname}/*.php
+%{php_pear_dir}/%{_class}/*.php
