@@ -6,12 +6,12 @@
 Summary:	%{_pearname} - Generating CHAP packets
 Summary(pl):	%{_pearname} - Generowanie pakietów CHAP
 Name:		php-pear-%{_pearname}
-Version:	0.8.5
+Version:	0.8.6
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
-# Source0-md5:	23a6e3c42897b5dcd6a561e569922921
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
+# Source0-md5:	8c500dac33bab6e3ac6f5d92306099b4
 URL:		http://pear.php.net/package/Crypt_CHAP/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
@@ -23,7 +23,8 @@ This package provides Classes for generating CHAP packets. Currently
 these types of CHAP are supported:
  - CHAP-MD5
  - MS-CHAPv1
- - MS-CHAPv2 For MS-CHAP the php-mhash extension must be loaded.
+ - MS-CHAPv2
+For MS-CHAP the php-mhash extension must be loaded.
 
 This class has in PEAR status: %{_status}.
 
@@ -32,7 +33,8 @@ Ten pakiet dostarcza klasy do generowania pakietów CHAP. Aktualnie
 dostêpnymi typami CHAP s±:
  - CHAP-MD5
  - MS-CHAPv1
- - MS-CHAPv2 Dla MS-CHAP musi byæ zainstalowany php-mhash.
+ - MS-CHAPv2
+Dla MS-CHAP musi byæ zainstalowany php-mhash.
 
 Ta klasa ma w PEAR status: %{_status}.
 
