@@ -1,17 +1,18 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		Crypt
 %define		_subclass	CHAP
-%define		_status		alpha
+%define		_status		stable
 %define		_pearname	%{_class}_%{_subclass}
+
 Summary:	%{_pearname} - Generating CHAP packets
 Summary(pl):	%{_pearname} - Generowanie pakietów CHAP
 Name:		php-pear-%{_pearname}
-Version:	0.8.6
+Version:	1.0.0
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	8c500dac33bab6e3ac6f5d92306099b4
+# Source0-md5:	b09ba7b851f85528638d9a9dae67b1c9
 URL:		http://pear.php.net/package/Crypt_CHAP/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
