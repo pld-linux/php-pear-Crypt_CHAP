@@ -27,7 +27,7 @@ these types of CHAP are supported:
  - MS-CHAPv2
 For MS-CHAP the php-mhash extension must be loaded.
 
-This class has in PEAR status: %{_status}.
+In PEAR status of this package is: %{_status}.
 
 %description -l pl
 Ten pakiet dostarcza klasy do generowania pakietów CHAP. Aktualnie
