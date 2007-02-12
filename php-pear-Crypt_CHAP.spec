@@ -4,7 +4,7 @@
 %define		_status		stable
 %define		_pearname	%{_class}_%{_subclass}
 Summary:	%{_pearname} - Generating CHAP packets
-Summary(pl):	%{_pearname} - Generowanie pakietów CHAP
+Summary(pl.UTF-8):   %{_pearname} - Generowanie pakietÃ³w CHAP
 Name:		php-pear-%{_pearname}
 Version:	1.0.0
 Release:	5
@@ -32,9 +32,9 @@ these types of CHAP are supported:
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Ten pakiet dostarcza klasy do generowania pakietów CHAP. Aktualnie
-dostêpnymi typami CHAP s±:
+%description -l pl.UTF-8
+Ten pakiet dostarcza klasy do generowania pakietÃ³w CHAP. Aktualnie
+dostÄ™pnymi typami CHAP sÄ…:
  - CHAP-MD5
  - MS-CHAPv1
  - MS-CHAPv2
@@ -43,7 +43,7 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
@@ -52,7 +52,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
