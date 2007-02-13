@@ -4,7 +4,7 @@
 %define		_status		stable
 %define		_pearname	%{_class}_%{_subclass}
 Summary:	%{_pearname} - Generating CHAP packets
-Summary(pl.UTF-8):   %{_pearname} - Generowanie pakietów CHAP
+Summary(pl.UTF-8):	%{_pearname} - Generowanie pakietów CHAP
 Name:		php-pear-%{_pearname}
 Version:	1.0.0
 Release:	5
@@ -43,7 +43,7 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
