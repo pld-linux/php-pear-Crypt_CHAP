@@ -6,19 +6,17 @@
 Summary:	%{_pearname} - Generating CHAP packets
 Summary(pl.UTF-8):	%{_pearname} - Generowanie pakietów CHAP
 Name:		php-pear-%{_pearname}
-Version:	1.0.0
-Release:	5
+Version:	1.0.1
+Release:	1
 Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	b09ba7b851f85528638d9a9dae67b1c9
+# Source0-md5:	e117935140025a3a2ac3e533430664cc
 URL:		http://pear.php.net/package/Crypt_CHAP/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
-Requires:	php(mcrypt)
-Requires:	php(mhash)
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -57,6 +55,8 @@ Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
+echo '%{name} can optionally use PHP extension "mhash"' >> optional-packages.txt
+echo '%{name} can optionally use PHP extension "mcrypt"' >> optional-packages.txt
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -66,9 +66,14 @@ install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
+	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
+fi
+
 %files
 %defattr(644,root,root,755)
-%doc install.log
+%doc install.log optional-packages.txt
 %{php_pear_dir}/%{_class}/*.php
 %{php_pear_dir}/.registry/*.reg
 
