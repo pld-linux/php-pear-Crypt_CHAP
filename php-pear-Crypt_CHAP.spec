@@ -18,6 +18,8 @@ BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-pear
+Suggests:	php(mcrypt)
+Suggests:	php(mhash)
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,8 +57,6 @@ Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
-echo '%{name} can optionally use PHP extension "mhash"' >> optional-packages.txt
-echo '%{name} can optionally use PHP extension "mcrypt"' >> optional-packages.txt
 
 %install
 rm -rf $RPM_BUILD_ROOT
