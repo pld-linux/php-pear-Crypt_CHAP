@@ -6,13 +6,13 @@
 Summary:	%{_pearname} - Generating CHAP packets
 Summary(pl.UTF-8):	%{_pearname} - Generowanie pakietów CHAP
 Name:		php-pear-%{_pearname}
-Version:	1.0.1
-Release:	2
+Version:	1.0.2
+Release:	1
 Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	e117935140025a3a2ac3e533430664cc
+# Source0-md5:	4175a1d5486f305831adba517009c253
 URL:		http://pear.php.net/package/Crypt_CHAP/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
