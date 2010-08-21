@@ -7,7 +7,7 @@ Summary:	%{_pearname} - Generating CHAP packets
 Summary(pl.UTF-8):	%{_pearname} - Generowanie pakietów CHAP
 Name:		php-pear-%{_pearname}
 Version:	1.0.2
-Release:	1
+Release:	2
 Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
@@ -18,8 +18,8 @@ BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-pear
-Suggests:	php(mcrypt)
-Suggests:	php(mhash)
+Suggests:	php-mcrypt
+Suggests:	php-mhash
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,8 +46,8 @@ Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-AutoReq:	no
 AutoProv:	no
+AutoReq:	no
 
 %description tests
 Tests for PEAR::%{_pearname}.
