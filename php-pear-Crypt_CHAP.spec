@@ -7,12 +7,13 @@ Summary:	%{_pearname} - Generating CHAP packets
 Summary(pl.UTF-8):	%{_pearname} - Generowanie pakietów CHAP
 Name:		php-pear-%{_pearname}
 Version:	1.0.2
-Release:	2
+Release:	3
 Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	4175a1d5486f305831adba517009c253
+Patch0:		mhash.patch
 URL:		http://pear.php.net/package/Crypt_CHAP/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -22,6 +23,7 @@ Suggests:	php-mcrypt
 Suggests:	php-mhash
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
 
 %description
 This package provides Classes for generating CHAP packets. Currently
@@ -57,6 +59,7 @@ Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
+%patch0 -p1 
 
 %install
 rm -rf $RPM_BUILD_ROOT

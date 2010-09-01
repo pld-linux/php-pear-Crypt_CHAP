@@ -1,0 +1,53 @@
+--- /usr/share/pear/Crypt/CHAP.php.org	2010-09-01 14:51:08.000000000 +0000
++++ /usr/share/pear/Crypt/CHAP.php	2010-09-01 14:53:38.000000000 +0000
+@@ -164,13 +164,13 @@
+     /**
+      * Constructor
+      *
+-     * Loads the mhash extension
++     * Loads the hash extension
+      * @return void
+      */
+     function Crypt_CHAP_MSv1()
+     {
+         $this->Crypt_CHAP();
+-        $this->loadExtension('mhash');        
++        $this->loadExtension('hash');        
+     }
+     
+     /**
+@@ -182,10 +182,11 @@
+     function ntPasswordHash($password = null) 
+     {
+         if (isset($password)) {
+-            return mhash(MHASH_MD4, $this->str2unicode($password));
++            return pack('H*',hash('md4', $this->str2unicode($password)));            
+         } else {
+-            return mhash(MHASH_MD4, $this->str2unicode($this->password));
++            return pack('H*',hash('md4', $this->str2unicode($this->password)));            
+         }
++        
+     }
+     
+     /**
+@@ -431,7 +432,8 @@
+      */    
+     function ntPasswordHashHash($nthash) 
+     {
+-        return mhash(MHASH_MD4, $nthash);
++        return pack('H*',hash('md4', $nthash));
++        
+     }
+     
+     /**
+@@ -443,8 +445,8 @@
+      */   
+     function challengeHash() 
+     {
+-        return substr(mhash(MHASH_SHA1, $this->peerChallenge . $this->authChallenge . $this->username), 0, 8);
+-    }    
++       return substr(pack('H*',hash('sha1', $this->peerChallenge . $this->authChallenge . $this->username)), 0, 8);
++    } 
+ 
+     /**
+      * Generates the response. 
