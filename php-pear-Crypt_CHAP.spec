@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		stable
 %define		_pearname	Crypt_CHAP
 Summary:	%{_pearname} - Generating CHAP packets
